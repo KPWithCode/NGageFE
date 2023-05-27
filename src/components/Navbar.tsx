@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <header class="bg-gray-900 w-screen text-white hover:bg-white hover:text-RichBlack transform transition duration-400 fixed">
+    <header class="bg-gray-900 w-screen text-white hover:bg-white hover:text-RichBlack transform transition duration-400 fixed z-10">
       <nav class="container flex items-center justify-between py-6 mx-auto">
         <div class="flex items-center">
           <button
