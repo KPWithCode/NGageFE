@@ -44,7 +44,7 @@ export default function Root() {
         />
         <Link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
       </Head>
-      <Body class="overflow-y-hidden">
+      <Body>
         <Suspense>
           <ErrorBoundary>            
             <Navbar />
