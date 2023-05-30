@@ -1,20 +1,21 @@
-
 const About = () => {
   return (
-    <div class="">
-      <div class="text-white pt-32 pl-8 font-bold text-6xl md:text-10xl text-RichBlack font-raleway tracking-wider">
+    <div>
+      <div class="text-white pt-32 pl-8 font-bold text-6xl sm:text-9xl text-RichBlack font-raleway tracking-wider">
         About
       </div>
       <div>
-        <div class="text-white pt-8 pl-8 font-bold justify-right text-md md:text-lg text-RichBlack font-raleway tracking-wider w-4/12">
-          No Frills! No Guarantees! Pure mathematical approach to approaching sports
-          based outcomes.
-        </div>
-        <div class="text-white pt-14 pl-8 font-bold text-2xl md:text-4xl text-RichBlack font-raleway tracking-wider w-7/12">
+        <ul class="text-white text-left pt-8 pl-8 font-bold justify-right text-lg sm:text-xl text-RichBlack font-raleway tracking-wider w-6/12 ">
+          <li>✔️ No Frills!</li>
+          <li> ✔️ No Absurd Guarantees!</li>
+          <li class="text-left break-words">
+          ✔️ Pure mathematical approach to approaching      sports based outcomes.
+          </li>
+        </ul>
+        <div class="flex justify-center text-white pt-14 pl-8 font-bold text-2xl md:text-6xl text-RichBlack font-raleway tracking-wider break-words text-center">
           AI generated leans and predictive tooling for highlighting increased
           outcomes
         </div>
-        
       </div>
     </div>
   );
