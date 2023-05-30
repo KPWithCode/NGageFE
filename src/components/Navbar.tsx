@@ -45,9 +45,9 @@ const Navbar = () => {
           </a>
             <a
               href="/"
-              class="text-2xl pl-1 font-bold italic text-Gold hover:text-DarkGold font-raleway"
+              class="text-2xl pl-1 font-bold text-Gold hover:text-DarkGold font-raleway"
             >
-              Fam
+              Pad
             </a>
         </div>
 
