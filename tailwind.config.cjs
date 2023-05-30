@@ -7,9 +7,10 @@ module.exports = {
       NeonG2: "#06c730",
       RichBlack: "#020402",
       Gold: "#FFD700",
-      DarkGold: "#f5d505",
       LamboGreen: "#d0ff00",
-      brightOrange: "#ff9900"
+      brightOrange: "#ff9900",
+      eerieBlack: "#191716",
+      darkPurple: "#0F0326"
     },
     fontSize: {
       '10xl': "9rem", /* 144px */
