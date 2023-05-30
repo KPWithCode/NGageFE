@@ -13,6 +13,8 @@ module.exports = {
       darkPurple: "#0F0326"
     },
     fontSize: {
+      '2xs': "0.625rem", /* 10px */
+      '3xs': "0.5rem", /* 8px */
       '10xl': "9rem", /* 144px */
       '11xl': "10.5rem", /* 168px */
       '12xl': "12rem", /* 192px */
