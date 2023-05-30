@@ -2,16 +2,14 @@ import { A } from "solid-start";
 import { For, createSignal } from "solid-js";
 import Sidebar from "./Sidebar";
 
-
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = createSignal(false);
-  const categories = ["Home","Subscribe", "About", "FAQ"];
+  const categories = ["Home", "About", "Subscribe", "FAQ"];
   const categories2 = ["Login", "Contact"];
 
   const toggleSideBar = () => {
     setSidebarOpen(!sidebarOpen());
   };
-
 
   const scrollToCategory = (category: string) => {
     if (category === "Home") {
@@ -25,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <header class="bg-gray-900 w-screen text-white hover:bg-white hover:text-RichBlack transform transition duration-400 fixed z-10">
+    <header class="bg-RichBlack w-screen text-white hover:bg-white hover:text-RichBlack transform transition duration-400 fixed z-10">
       <nav class="container flex items-center justify-between py-6 mx-auto">
         <div class="flex items-center">
           <button
@@ -42,18 +40,15 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <a
-            href="/"
-            class="text-2xl font-bold font-raleway"
-          >
-            Safe
+          <a href="/" class="text-2xl font-bold font-raleway">
+            Stat
           </a>
-          <a
-            href="/"
-            class="text-2xl pl-1 font-bold italic text-Gold hover:text-DarkGold font-raleway"
-          >
-            Bet
-          </a>
+            <a
+              href="/"
+              class="text-2xl pl-1 font-bold italic text-Gold hover:text-DarkGold font-raleway"
+            >
+              Fam
+            </a>
         </div>
 
         <div
@@ -109,7 +104,12 @@ const Navbar = () => {
             href=""
             class="transition hover:-translate-y-1 duration-200 ease-in-out"
           >
-            <svg class="h-6 w-6" viewBox="0 2 26 24" fill="none" style="transform: scaleY(-1)">
+            <svg
+              class="h-6 w-6"
+              viewBox="0 2 26 24"
+              fill="none"
+              style="transform: scaleY(-1)"
+            >
               <path
                 d="M19 19H5V8H19V19ZM19 19L12 14L5 19"
                 stroke="currentColor"
