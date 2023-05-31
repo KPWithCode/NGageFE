@@ -38,6 +38,10 @@ export default function Root() {
           rel="stylesheet"
         />
         <Link
+          href="https://fonts.googleapis.com/css?family=Lora"
+          rel="stylesheet"
+        />
+        <Link
           href="https://fonts.googleapis.com/css?family=Poppins"
           rel="stylesheet"
         />

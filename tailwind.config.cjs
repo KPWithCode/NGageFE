@@ -23,7 +23,8 @@ module.exports = {
     fontFamily: {
       raleway: ['Raleway', 'sans-serif'],
       poppins: ['Poppins', 'sans-serif'],
-      EBgaramond: ['EB Garamond', 'serif']
+      EBgaramond: ['EBGaramond', 'serif'],
+      lora:['Lora', 'sans-serif']
     },
     extend: {
 
