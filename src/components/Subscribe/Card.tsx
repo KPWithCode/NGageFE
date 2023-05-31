@@ -5,6 +5,7 @@ interface SubscriptionCardProps {
   price: string;
   description: string;
   features: string[];
+  recommended?:string;
 }
 
 function SubscriptionCard({
@@ -12,15 +13,16 @@ function SubscriptionCard({
   price,
   description,
   features,
+  recommended
 }: SubscriptionCardProps) {
   const [isHovered, setIsHovered] = createSignal(false);
 
   return (
     <div
-      class="bg-white rounded-lg shadow-md p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 justify-center"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{ "z-index": isHovered() ? 1 : 0 }}
+      class="bg-white rounded-lg shadow-md p-6 cursor-pointer transform transition-transform duration-200 hover:scale-105 justify-center "
+      // onMouseEnter={() => setIsHovered(true)}
+      // onMouseLeave={() => setIsHovered(false)}
+      // style={{ "z-index": isHovered() ? 1 : 0 }}
     >
       <div>
         <h2 class="flex justify-center text-2xl font-bold pb-4 border-b-2 border-gray-200">
@@ -36,13 +38,18 @@ function SubscriptionCard({
             <p class="py-2">✔️ {feature}</p>
           ))}
         </ul>
-        <div class="">
+        <div>
           <p class="text-3xl font-bold text-RichBlack mb-6">${price}</p>
-          <button class="bg-gray-800 hover:bg-RichBlack text-white font-bold py-2 px-4 rounded w-full">
+          <button class="bg-RichBlack hover:bg-Gold text-white hover:text-RichBlack font-bold py-2 px-4 rounded w-full">
             Choose
           </button>
         </div>
       </div>
+      {recommended && (
+        <div class="absolute top-0 right-0 m-4 flex items-center justify-center">
+          <span class="bg-Gold rounded-full text-2xs text-black p-1.5">{recommended}</span>
+        </div>
+      )}
     </div>
   );
 }
