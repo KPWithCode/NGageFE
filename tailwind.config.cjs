@@ -24,7 +24,7 @@ module.exports = {
       raleway: ['Raleway', 'sans-serif'],
       poppins: ['Poppins', 'sans-serif'],
       EBgaramond: ['EBGaramond', 'serif'],
-      lora:['Lora', 'sans-serif']
+      lora:['Lora', 'serif']
     },
     extend: {
 
