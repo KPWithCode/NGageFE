@@ -100,7 +100,7 @@ export default function Home() {
               )}
             </For>
           </div>
-        </div>
+                </div>
         <div class="flex justify-start w-5/12 font-bold font-poppins text-2xl pt-24 pl-12 text-white tracking-wide text-left">
           A low cost dashboard for finding the best matchups, leans, and projections.
         </div>
@@ -111,7 +111,7 @@ export default function Home() {
             class="rounded-full px-16 py-7 bg-RichBlack hover:bg-white text-3xl text-Gold hover:text-RichBlack tracking-wider border border-white transition hover:-translate-y-2 duration-500"
           >
             Sign Up
-          </button>
+          </button> 
         </div>
       </div>
       <div
