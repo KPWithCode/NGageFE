@@ -12,7 +12,7 @@ const About = () => {
             ✔️ Purely a mathematical approach to fantasy & sports betting.
           </li>
         </ul>
-        <div class="flex justify-center text-white pt-14 pl-8 text-2xl md:text4xl text-RichBlack font-raleway tracking-wider break-words text-center">
+        <div class="flex justify-center font-bold text-white pt-14 pl-8 text-2xl md:text-4xl text-RichBlack font-raleway tracking-wider break-words text-center">
           Predictive tooling for high percentage leans.
         </div>
         <div class="flex justify-center items-center mt-36">

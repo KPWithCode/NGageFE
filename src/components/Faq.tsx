@@ -29,36 +29,44 @@ const FAQ = () => {
       <div class="flex text-white pt-32 pl-8 font-bold text-6xl md:text-10xl text-RichBlack font-raleway tracking-wider">
         FAQ
       </div>
-      <div >
+      <div>
         <div class="justify-center text-align text-white pt-2 pl-8 text-md md:text-2xl text-RichBlack font-raleway tracking-wider w-5/12 font-bold">
           <i class="">
             There no such thing as a sure bet. We don't believe in one size fits
             all solutions. Sports betting is a market & markets need tools.
           </i>
-        </div>  
+        </div>
         <div class="flex flex-col mt-4 pl-8 font-bold text-lg md:text-2xl text-RichBlack font-raleway tracking-wider items-center">
-
           {questions.map((question, index) => (
             <div>
               <button
                 class="flex pb-6 w-full justify-center"
                 onClick={() => handleClick(index)}
               >
-                <div class="underline underline-offset-4">{question.question}</div>
+                <div class="underline underline-offset-4">
+                  {question.question}
+                </div>
                 <div
                   class={`${
-                    activeQuestion() === index ? "transition-transform -rotate-0": ""
+                    activeQuestion() === index
+                      ? "transition-transform rotate-0"
+                      : ""
                   } transform rotate-180`}
                 >
-                  <div class= {`${
-                  activeQuestion() === index ? "text-gray-700" : ""
-                }`}>
-
-                  &#9660;
+                  <div
+                    class={`${
+                      activeQuestion() === index ? "text-gray-700" : ""
+                    }`}
+                  >
+                    &#9660;
                   </div>
                 </div>
               </button>
-              {activeQuestion() === index && <div class="flex text-md font-bold items-center pb-3 flex-wrap max-w-xl">{question.answer}</div>}
+              {activeQuestion() === index && (
+                <div class="flex text-sm font-bold items-center pb-3 flex-wrap max-w-xl">
+                  {question.answer}
+                </div>
+              )}
             </div>
           ))}
         </div>
