@@ -25,7 +25,10 @@ export default function Root() {
           name="description"
           content="Get accurate sports analytics, leans, and picks for sports bettors. Join StatPad for expert predictions and maximize your chances of winning."
         />
-        <Meta name="keywords" content="sports analytics, leans, picks, sports bettors, sports predictions" />
+        <Meta
+          name="keywords"
+          content="sports analytics, leans, picks, sports bettors, sports predictions"
+        />
         <Link rel="manifest" href="/manifest.webmanifest" />
         <Link
           href="https://fonts.googleapis.com/css?family=Abril+Fatface"

@@ -6,7 +6,7 @@ const Subscription = () => {
 
   return (
     <div class="">
-      <div class="text-white pt-32 pl-8 font-bold text-6xl sm:text-9xl text-white font-raleway tracking-wider ">
+      <div class="text-Gold pt-32 pl-8 font-bold text-6xl sm:text-9xl text-white font-raleway tracking-wider ">
         Subscribe
       </div>
       <div class="flex justify-center items-center h-auto w-screen mt-4">
