@@ -25,5 +25,5 @@ Thumbs.db
 
 
 .env
-**/config
 vite.config.ts
+**/config
