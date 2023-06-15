@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = createSignal(false);
   const categories = ["Home", "About", "Subscribe", "FAQ"];
-  const categories2 = ["Login", "Contact"];
+  const categories2 = ["Login"]; 
 
   const toggleSideBar = () => {
     setSidebarOpen(!sidebarOpen());
@@ -60,7 +60,7 @@ const Navbar = () => {
         </div>
 
         <div class="">
-          <ul class="flex items-center space-x-10 ">
+          <ul class="flex items-center space-x-10">
             <For
               each={categories}
               fallback={
@@ -89,18 +89,25 @@ const Navbar = () => {
             }
           >
             {(cat2) => (
-              <ul class="uppercase mx-1">
+              <ul class="uppercase mx-1 cursor-pointer">
                 <A
                   class="inline-block text-sm transition hover:-translate-y-1 duration-200 ease-in-out font-raleway"
-                  href={`/shop/${cat2.toLowerCase()}`}
+                  href={`/${cat2.toLowerCase()}`}
                 >
                   {cat2}
                 </A>
               </ul>
             )}
           </For>
+          <div class="uppercase mx-1 cursor-pointer">
+                <A class="inline-block text-sm transition hover:-translate-y-1 duration-200 ease-in-out font-raleway"
+                href="https://twitter.com/thestatpad"
+                >
+                  Contact
+                </A>
+          </div>
 
-          <a
+          <A
             href=""
             class="transition hover:-translate-y-1 duration-200 ease-in-out"
           >
@@ -118,7 +125,7 @@ const Navbar = () => {
                 stroke-linejoin="round"
               />
             </svg>
-          </a>
+          </A>
         </div>
       </nav>
     </header>
