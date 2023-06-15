@@ -102,7 +102,7 @@ export default function Home() {
           </div>
                 </div>
         <div class="flex justify-start w-5/12 font-bold font-poppins text-2xl pt-24 pl-12 text-white tracking-wide text-left">
-          A low cost dashboard for finding the best matchups, leans, and projections.
+          A statistics based tool for highlighting the best matchups, leans, and projections.
         </div>
 
         <div class="flex justify-center items-center mt-36">
