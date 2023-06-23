@@ -21,10 +21,12 @@
     "@solidjs/router": "^0.8.2",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.54.0",
+    "axios": "^1.4.0",
     "dotenv": "^16.1.3",
     "firebase": "^9.22.1",
     "solid-js": "^1.7.2",
     "solid-start": "^0.2.26",
+    "stripe": "^12.8.0",
     "undici": "^5.15.1"
   },
   "engines": {
