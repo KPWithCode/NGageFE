@@ -4,6 +4,8 @@ import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = createSignal(false);
+  const [email, setEmail] = createSignal("statpadanalytics@gmail.com");
+
   const categories = ["Home", "About", "Subscribe", "FAQ"];
   const categories2 = ["Login"]; 
 
@@ -108,8 +110,9 @@ const Navbar = () => {
           </div>
 
           <A
-            href=""
             class="transition hover:-translate-y-1 duration-200 ease-in-out"
+            href=""
+            // href={window.location.replace("mailto:company@email.com")}
           >
             <svg
               class="h-6 w-6"
