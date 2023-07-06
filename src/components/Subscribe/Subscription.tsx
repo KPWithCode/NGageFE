@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 
 const init = async () => {
   await dotenv.config();
-}
+};
 const Subscription = () => {
   init();
   const [toggle, setToggle] = createSignal();
@@ -13,56 +13,70 @@ const Subscription = () => {
   const [stripeError, setstripeError] = createSignal();
 
   let stripePromise: any;
-  
+
   const getStripe = () => {
     if (!stripePromise) {
       stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY || "");
     }
     return stripePromise;
-  }
-  const handleBasic = async () => {
-  //   setIsSignedIn(false);
-  setLoading(true)
-  const stripe = await getStripe();
-  const { error } = await stripe.redirectToCheckout({
-    lineItems: [
-      {
-        price: process.env.BASIC_STRIPE_PRICE_ID,
-        quantity: 1
-      }
-    ],
-    mode: "payment",
-    cancelUrl:window.location.origin,
-    success:`${window.location.origin}/purchased`
-  })
+  };
 
-  if (error) {
-    setLoading(false)
-    setstripeError(error)
-  }
+  const handleBasic = async () => {
+    //   setIsSignedIn(false);
+    setLoading(true);
+    console.log("handleBasic called");
+    try {
+      const stripe = await getStripe();
+      const { error } = await stripe.redirectToCheckout({
+        lineItems: [
+          {
+            price: process.env.BASIC_STRIPE_PRICE_ID,
+            quantity: 1,
+          },
+        ],
+        mode: "subscription",
+        cancelUrl: window.location.origin,
+        successUrl: `${window.location.origin}/about`,
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+    } catch (error: any) {
+      setstripeError(error.message);
+      console.log("handleBasic error:", error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handlePremium = async () => {
-    //   setIsSignedIn(false);
-    setLoading(true)
-    const stripe = await getStripe();
-    const { error } = await stripe.redirectToCheckout({
-      lineItems: [
-        {
-          price: process.env.PREMIUM_STRIPE_PRICE_ID,
-          quantity: 1
-        }
-      ],
-      mode: "payment",
-      cancelUrl:window.location.origin,
-      success:`${window.location.origin}/purchased`
-    })
-  
-    if (error) {
-      setLoading(false)
-      setstripeError(error)
+    setLoading(true);
+    console.log("handlePremium called");
+    try {
+      const stripe = await getStripe();
+      const { error } = await stripe.redirectToCheckout({
+        lineItems: [
+          {
+            price: process.env.PREMIUM_STRIPE_PRICE_ID,
+            quantity: 1,
+          },
+        ],
+        mode: "subscription",
+        cancelUrl: window.location.origin,
+        successUrl: `${window.location.origin}/about`,
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+    } catch (error: any) {
+      setstripeError(error);
+      console.log("handlePremium error:", error.message);
+    } finally {
+      setLoading(false);
     }
-    };
+  };
 
   return (
     <div class="">
@@ -91,7 +105,7 @@ const Subscription = () => {
               "Sports Optimiser",
               "VIP All access plays,",
               "Algo Backed Leans",
-              "Picks of the Day"
+              "Picks of the Day",
             ]}
             price="29.99/mo"
             recommended="Recommended"
