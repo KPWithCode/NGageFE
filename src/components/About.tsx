@@ -1,3 +1,5 @@
+import spinningbasebaball from "~/recources/baseballspin.mp4";
+
 const About = () => {
   return (
     <div>
@@ -14,6 +16,12 @@ const About = () => {
         </ul>
         <div class="flex justify-center font-bold text-white pt-14 pl-8 text-2xl md:text-4xl text-RichBlack font-raleway tracking-wider break-words text-center">
           Predictive tooling for high percentage leans.
+        </div>
+        <div class="flex justify-end items-right mt-36">
+          <video>
+            <source src={spinningbasebaball} type="video/mp4" />
+            Sorry, your browser doesn't support videos.
+          </video>
         </div>
         <div class="flex justify-center items-center mt-36">
           <button
