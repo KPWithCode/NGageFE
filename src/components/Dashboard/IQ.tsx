@@ -3,7 +3,7 @@ import { Show, createSignal,onCleanup } from "solid-js";
 // interface DashboardProps {
 //   data: string; // Replace "string" with the appropriate type for your data
 // }
-const IQ = () => {
+const Iq = () => {
   // props: DashboardProps
   //   const { data } = props;
   const [currentPage, setCurrentPage] = createSignal(1);
@@ -48,4 +48,4 @@ const IQ = () => {
   );
 };
 
-export default IQ;
+export default Iq;
