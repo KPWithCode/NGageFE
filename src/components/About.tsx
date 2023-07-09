@@ -1,5 +1,3 @@
-import spinningbasebaball from "~/recources/baseballspin.mp4";
-
 const About = () => {
   return (
     <div>
@@ -7,22 +5,22 @@ const About = () => {
         About
       </div>
       <div>
-        <ul class="text-white text-left pt-8 pl-8 font-bold justify-right text-lg sm:text-2xl text-RichBlack font-raleway tracking-wider w-7/12">
+        <ul class="text-white text-left pt-8 pl-8 font-bold justify-right text-lg sm:text-3xl text-RichBlack font-raleway tracking-wider w-7/12">
           <li>✔️ No Frills!</li>
           <li> ✔️ No Absurd Guarantees!</li>
           <li class="text-left break-words">
             ✔️ Purely a mathematical approach to fantasy & sports betting.
           </li>
         </ul>
-        <div class="flex justify-center font-bold text-white pt-14 pl-8 text-2xl md:text-4xl text-RichBlack font-raleway tracking-wider break-words text-center">
+        <div class="flex justify-center font-bold text-white pt-14 pl-8 text-2xl sm:text-5xl text-RichBlack font-raleway tracking-wider break-words text-center">
           Predictive tooling for high percentage leans.
         </div>
-        <div class="flex justify-end items-right mt-36">
+        {/* <div class="flex justify-end items-right mt-36">
           <video>
             <source src={spinningbasebaball} type="video/mp4" />
             Sorry, your browser doesn't support videos.
           </video>
-        </div>
+        </div> */}
         <div class="flex justify-center items-center mt-36">
           <button
             // onClick={scrollToSignup}
