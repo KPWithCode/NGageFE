@@ -5,7 +5,7 @@ const About = () => {
         About
       </div>
       <div>
-        <ul class="text-white text-left pt-8 pl-8 font-bold justify-right text-lg sm:text-3xl text-RichBlack font-raleway tracking-wider w-7/12">
+        <ul class="text-white text-left pt-8 pl-8 font-bold justify-right text-lg sm:text-3xl  font-raleway tracking-wider w-7/12">
           <li>✔️ No Frills!</li>
           <li> ✔️ No Absurd Guarantees!</li>
           <li class="text-left break-words">
