@@ -2,6 +2,7 @@ import { For, createSignal, createEffect, onCleanup } from "solid-js";
 import About from "~/components/About";
 import FAQ from "~/components/Faq";
 import Subscription from "~/components/Subscribe/Subscription";
+import spinningbasebaball from "~/recources/baseballspin.mp4";
 
 export default function Home() {
   const engagement = ["Victory", "Success", "Picks", "Parlays", "Fantasy"];
@@ -114,22 +115,31 @@ export default function Home() {
           </button> 
         </div>
       </div>
+
       <div
         id="container"
         class="snap-y snap-always snap-proximity snap-mandatory scroll-smooth"
       >
         <div
           id="about"
-          class="w-screen h-screen bg-Gold snap-start snap-always snap-proximity snap-mandatory scroll-smooth"
+          class="w-screen h-screen snap-start snap-always snap-proximity snap-mandatory scroll-smooth bg-Gold "
         >
           <About />
         </div>
         <div
           id="subscribe"
           class=" w-screen h-screen bg-RichBlack
-         snap-start snap-always snap-proximity snap-mandatory scroll-smooth"
+         snap-start snap-always snap-proximity snap-mandatory scroll-smooth relative"
         >
+          <div class="absolute">
+          <video autoplay muted loop class="w-full h-full -z-10  top-0 left-0">
+            <source src={spinningbasebaball} type="video/mp4" />
+            Sorry, your browser doesn't support videos.
+          </video>
+        </div>
+        <div class="relative">
           <Subscription />
+        </div>
         </div>
         <div
           id="faq"
