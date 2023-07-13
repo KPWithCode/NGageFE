@@ -60,7 +60,6 @@ export default function Root() {
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <Navbar />
             <Routes>
               <FileRoutes />
             </Routes>
