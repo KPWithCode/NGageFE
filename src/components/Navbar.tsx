@@ -2,12 +2,16 @@ import { A } from "solid-start";
 import { For, createSignal } from "solid-js";
 import Sidebar from "./Sidebar";
 
-const Navbar = () => {
+interface NavbarProps {
+  onToggleLoginModal: (event: MouseEvent) => void;
+}
+const Navbar = ({ onToggleLoginModal }: NavbarProps) => {
   const [sidebarOpen, setSidebarOpen] = createSignal(false);
+
   const [email, setEmail] = createSignal("statpadanalytics@gmail.com");
 
   const categories = ["Home", "About", "Subscribe", "FAQ"];
-  const categories2 = ["Login"]; 
+  const categories2 = ["SignUp/Login"];
 
   const toggleSideBar = () => {
     setSidebarOpen(!sidebarOpen());
@@ -45,12 +49,12 @@ const Navbar = () => {
           <a href="/" class="text-2xl font-bold font-raleway">
             Stat
           </a>
-            <a
-              href="/"
-              class="text-2xl pl-1 font-bold text-Gold hover:text-DarkGold font-raleway"
-            >
-              Pad
-            </a>
+          <a
+            href="/"
+            class="text-2xl pl-1 font-bold text-Gold hover:text-DarkGold font-raleway"
+          >
+            Pad
+          </a>
         </div>
 
         <div
@@ -92,21 +96,25 @@ const Navbar = () => {
           >
             {(cat2) => (
               <ul class="uppercase mx-1 cursor-pointer">
-                <A
-                  class="inline-block text-sm transition hover:-translate-y-1 duration-200 ease-in-out font-raleway"
-                  href={`/${cat2.toLowerCase()}`}
-                >
-                  {cat2}
-                </A>
+                {cat2 === "SignUp/Login" && (
+                  <a
+                    class="inline-block text-sm transition hover:-translate-y-1 duration-200 ease-in-out font-raleway"
+                    onClick={onToggleLoginModal}
+                    // href={`/${cat2.toLowerCase()}`}
+                  >
+                    {cat2}
+                  </a>
+                )}
               </ul>
             )}
           </For>
           <div class="uppercase mx-1 cursor-pointer">
-                <A class="inline-block text-sm transition hover:-translate-y-1 duration-200 ease-in-out font-raleway"
-                href="https://twitter.com/thestatpad"
-                >
-                  Contact
-                </A>
+            <A
+              class="inline-block text-sm transition hover:-translate-y-1 duration-200 ease-in-out font-raleway"
+              href="https://twitter.com/thestatpad"
+            >
+              Contact
+            </A>
           </div>
 
           <A
