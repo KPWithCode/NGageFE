@@ -1,11 +1,11 @@
 const About = () => {
   return (
     <div>
-      <div class="text-white pt-32 pl-8 font-bold text-6xl sm:text-9xl text-RichBlack font-raleway tracking-wider">
+      <div class="text-RichBlack pt-32 pl-8 font-bold text-6xl sm:text-9xl  font-raleway tracking-wider">
         About
       </div>
       <div>
-        <ul class="text-white text-left pt-8 pl-8 font-bold justify-right text-lg sm:text-3xl  font-raleway tracking-wider w-7/12">
+        <ul class="text-RichBlack text-left pt-8 pl-8 font-bold justify-right text-lg sm:text-3xl  font-raleway tracking-wider w-7/12">
           <li>✔️ No Frills!</li>
           <li> ✔️ No Absurd Guarantees!</li>
           <li class="text-left break-words">
