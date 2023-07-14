@@ -1,12 +1,15 @@
 import { For, createSignal, createEffect, onCleanup } from "solid-js";
 import About from "~/components/About";
 import FAQ from "~/components/Faq";
+import Navbar from "~/components/Navbar";
 import Subscription from "~/components/Subscribe/Subscription";
+import LoginModal from "~/components/login";
 import spinningbasebaball from "~/recources/baseballspin.mp4";
 
 export default function Home() {
   const engagement = ["Victory", "Success", "Picks", "Parlays", "Fantasy"];
   const [currentCategory, setCurrentCategory] = createSignal(0);
+  const [showLoginModal, setShowLoginModal] = createSignal(false);
 
   let intervalId: number | undefined;
   let startY: number | null = null;
@@ -53,6 +56,11 @@ export default function Home() {
 
   startWordCycling();
 
+  const handleToggleLoginModal = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    setShowLoginModal(true);
+  };
+
   createEffect(() => {
     const container = document.getElementById("container");
     if (container) {
@@ -74,6 +82,7 @@ export default function Home() {
 
   return (
     <div class="bg-RichBlack">
+      <Navbar onToggleLoginModal={handleToggleLoginModal} />
       <div class="flex-col w-screen h-screen">
         <div
           id="Home"
@@ -101,9 +110,10 @@ export default function Home() {
               )}
             </For>
           </div>
-                </div>
+        </div>
         <div class="flex justify-start w-5/12 font-bold font-poppins text-2xl pt-24 pl-12 text-white tracking-wide text-left">
-          A statistics based tool for highlighting the best matchups, leans, and projections.
+          A statistics based tool for highlighting the best matchups, leans, and
+          projections.
         </div>
 
         <div class="flex justify-center items-center mt-36">
@@ -112,7 +122,7 @@ export default function Home() {
             class="rounded-full px-16 py-7 bg-RichBlack hover:bg-white text-3xl text-Gold hover:text-RichBlack tracking-wider border border-white transition hover:-translate-y-2 duration-500"
           >
             Sign Up
-          </button> 
+          </button>
         </div>
       </div>
 
@@ -131,15 +141,20 @@ export default function Home() {
           class=" w-screen h-screen bg-RichBlack
          snap-start snap-always snap-proximity snap-mandatory scroll-smooth relative"
         >
-          <div class="absolute">
-          <video autoplay muted loop class="w-full h-full -z-10  top-0 left-0">
-            <source src={spinningbasebaball} type="video/mp4" />
-            Sorry, your browser doesn't support videos.
-          </video>
-        </div>
-        <div class="relative">
-          <Subscription />
-        </div>
+          <div class="absolute inset-0">
+            <video
+              autoplay
+              muted
+              loop
+              class="w-full h-full -z-10 top-0 left-0  object-cover"
+            >
+              <source src={spinningbasebaball} type="video/mp4" />
+              Sorry, your browser doesn't support videos.
+            </video>
+          </div>
+          <div class="relative">
+            <Subscription />
+          </div>
         </div>
         <div
           id="faq"
@@ -157,6 +172,9 @@ export default function Home() {
           <li>NFL</li>
         </ul>
       </div>
+      {showLoginModal() && (
+        <LoginModal onClose={() => setShowLoginModal(false)} />
+      )}
     </div>
   );
 }
