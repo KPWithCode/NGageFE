@@ -15,15 +15,13 @@
     "vite": "^4.1.4"
   },
   "dependencies": {
-    "@firebase/app": "^0.9.11",
-    "@firebase/auth": "^1.0.0",
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "^0.8.2",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.54.0",
     "axios": "^1.4.0",
     "dotenv": "^16.1.3",
-    "firebase": "^9.23.0",
+    "firebase": "^10.0.0",
     "solid-js": "^1.7.2",
     "solid-start": "^0.2.26",
     "stripe": "^12.8.0",
