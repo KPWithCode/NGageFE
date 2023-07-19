@@ -11,10 +11,18 @@ import {
   Scripts,
   ErrorBoundary,
 } from "solid-start";
+import { createSignal } from "solid-js";
+import { AuthContextProvider } from "./context/authContext";
 import Navbar from "./components/Navbar";
 import "./root.css";
 
 export default function Root() {
+  const [loginModalOpen, setLoginModalOpen] = createSignal(false);
+
+  const toggleLoginModal = () => {
+    setLoginModalOpen(!loginModalOpen());
+  };
+
   return (
     <Html>
       <Head>
@@ -60,9 +68,13 @@ export default function Root() {
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <Routes>
-              <FileRoutes />
-            </Routes>
+            <AuthContextProvider>
+              <Navbar onToggleLoginModal={toggleLoginModal} />
+
+              <Routes>
+                <FileRoutes />
+              </Routes>
+            </AuthContextProvider>
           </ErrorBoundary>
         </Suspense>
         {/* This one line "scripts" voided my styling when deleted*/}
